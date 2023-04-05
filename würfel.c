@@ -39,13 +39,6 @@ int main(void)
             break;
         }
         c = getch();
-        printf("\33[2K\r");
-        printf("\33[2K\r");
-        printf("\33[2K\r");
-        printf("\33[2K\r");
-        printf("\33[2K\r");
-        
-    } while (c != 'q');
-
+    } while (c != 'q');  
     return 0;
 }
