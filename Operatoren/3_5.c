@@ -8,18 +8,17 @@
 
 int main(void)
 {
-    int a,b=0;
+    int a;
+    char b;
     printf("Bitte gib eine maximal vierstellige Hexadezimalzahl ein: ");
-    scanf("%4X%X",&a,&b);
-    if (b == 0)
+    scanf("%4X%c",&a,&b);
+    if (b == '\n')
     {
         printf("Die Dezimalzahl dazu ist : %d", a);
     }
     else {
         printf("Die restlichen Zahlen wurden verworfen.\nDezimal: %d", a);
     }
-    
-    
     getch();
     return 0;
 }
