@@ -35,8 +35,7 @@ int postleitzahl(int a)
 int main(void)
 {
     int zahl_1 = 80333, zahl_2 = 40;
-    char a = '-';
-    char b = '=';
+    char a = '-', b = '=';
     zeichenausgabe(zahl_2,a);
     zeilenumbruch();
     postleitzahl(zahl_1);
