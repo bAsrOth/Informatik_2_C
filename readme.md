@@ -1,8 +1,8 @@
 # Informatik 2 Repository für die C-Dateien und Builds
 Dieses Repository enthält die Lösungen zu den Praktika und die Lösungen der Aufgaben am Ende der Folien. Unterteilt wird folgendermaßen:
--Einführung 
--Datentypen
--Operatoren
+* Einführung 
+* Datentypen
+* Operatoren
 
 ***Wichtiger Befehl zum compilen der Dateien in den richtigen Ordner***
 
