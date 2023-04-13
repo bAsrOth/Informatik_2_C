@@ -20,7 +20,7 @@ Es muss aus dem .\build\ Ordner heraus kompliliert werden, dann werden dort die 
 
 Checkliste
 
-- :white_check_mark: Datentypen
+- :heavy_check_mark: Datentypen
     - [X] Alles
 
 - [X] Operatoren
