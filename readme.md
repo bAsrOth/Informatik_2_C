@@ -17,3 +17,16 @@ Dieses Repository enthält die Lösungen zu den Praktika und die Lösungen der A
     cl E:\UNIVERTSITÄT\HAW-Landshut\Semester_2\Informatik_Praktikum\file.c
 
 Es muss aus dem .\build\ Ordner heraus kompliliert werden, dann werden dort die .exe und die .obj erzeugt. Dient einfach zur Ordnung.
+
+Checkliste
+
+[X] Parent 1
+    - [X] Child - 1
+    - [X] Child - 2
+    - [X] Child - 3
+    - [X] Child - 4
+- [ ] Parent 2
+    - [ ] Child - 1
+    - [ ] Child - 2
+    - [ ] Child - 3
+    - [ ] Child - 4
