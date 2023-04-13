@@ -20,7 +20,7 @@ Es muss aus dem .\build\ Ordner heraus kompliliert werden, dann werden dort die 
 
 Checkliste
 
-- [X] Parent 1
+- green_check_mark Parent 1
     - [X] Child - 1
     - [X] Child - 2
     - [X] Child - 3
