@@ -35,6 +35,14 @@ Checkliste
   - [ ] 4.1
   - [ ] 4.2
 
+- [ ] Funktionen
+  - [ ] 5.1
+  - [ ] 5.2
+  - [ ] 5.3
+  - [ ] 5.4
+  - [ ] 5.7
+  - [ ] 5.8
+
 - [ ] Arrays und Zeichenketten
   - [X] 6.1
   - [X] 6.2
