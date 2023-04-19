@@ -21,7 +21,7 @@ Es muss aus dem .\build\ Ordner heraus kompliliert werden, dann werden dort die 
 Checkliste
 
 - [X] Datentypen
-    - [X] Alles
+  - [X] Alles
 
 - [X] Operatoren
   - [X] 3.3
