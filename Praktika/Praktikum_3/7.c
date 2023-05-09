@@ -24,8 +24,7 @@ int main(void)
     zahl = zahl /2;
     int bit8 = zahl % 2;
 
-    printf("%i%i%i%i %i%i%i%i\n",bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8);
-    printf("%8b",zahl);
+    printf("%i%i%i%i %i%i%i%i\n",bit8,bit7,bit6,bit5,bit4,bit3,bit2,bit1);
 
     getch();
     // bit = zahl/2 % 2;
