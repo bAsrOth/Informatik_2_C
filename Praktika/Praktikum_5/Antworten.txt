@@ -1,0 +1,4 @@
+a) returned eine Int, ist aber return Type void
+b) kein return-wert
+c) typ von y nicht definiert
+d) semikolon außerhalb der geschweiften Klammern
