@@ -89,13 +89,60 @@ int getDNASequence(char seq[])
     }
     return 0;
 }
+/**
+ * @brief Funktion verschlsselt ein Triplet mit Bits, Bsp: Leerer unsigned char: 00 00 00 00 = "AGT" = 00 11 10 00
+ * 
+ * @param seq šbergabe eines Triplet-Strings
+ * @return unsigned char Ausgabe des verschlsselten Char 
+ */
+unsigned char encode(char seq[])
+{
+    
+    int bit_A = 0;
+    int bit_C = 1;
+    int bit_G = 2;
+    int bit_T = 3;
+    unsigned char ausgabe = 0;
 
-unsigned char encode(char seq[]);
+    for (int i = 0; i < 3; i++)
+    {
+        switch (seq[i])
+        {
+        case 'A':
+            ausgabe |= bit_A;
+            break;
+        case 'C':
+            ausgabe |= bit_C;
+            break;
+        case 'G':
+            ausgabe |= bit_G;
+            break;
+        case 'T':
+            ausgabe |= bit_T;
+            break;
+        }
+        bit_A = bit_A << 2;
+        bit_C = bit_C << 2;
+        bit_G = bit_G << 2;
+        bit_T = bit_T << 2;
+    }
+    // 0 (00 00 00 00) -> 0  (00 00 00 00) -> 0  (00 00 00 00) -> bit_A
+    // 1 (00 00 00 01) -> 4  (00 00 01 00) -> 16 (00 01 00 00) -> bit_C
+    // 2 (00 00 00 10) -> 8  (00 00 10 00) -> 32 (00 10 00 00) -> bit_G
+    // 3 (00 00 00 11) -> 12 (00 00 11 00) -> 48 (00 11 00 00) -> bit_T
+
+    // ALSO: Ich muss nach jeder Iteration 2 Bits nach links shiften, wenn eine For-Schleife benutzt wird
+    // Eigentlich nur *4 immer die Bits, aber Bit-Shiften zum Ausprobieren, da wir ja auch den char in Bits manipulieren
+    // Zahlen kann man nicht bin„r angeben, schade :( (Compiler sagt nein)
+
+    return ausgabe;
+}
 
 int main(void)
 {
-
-    char test[1];
-    int zahl = getDNASequence(test);
+    char codon[] = "TTT";
+    unsigned char code = encode(codon);
+    printf("%u\n", code);
+    getch();
     return 0;
 }
