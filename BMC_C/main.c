@@ -154,32 +154,76 @@ unsigned char readCodon(FILE *fp)
     return einlesen;
 }
 
+void arrayFuellen(int array[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        array[i] = 64;
+    }
+}
+
+
 int main(void)
 {
-    //char speicher = (char *) malloc(1000 * sizeof(char));
-    char genom[MAX_GENOM] = {0};
-    char suchGen[MAX_UNKODIERT] = {0};
-    char genKodiert[MAX_KODIERT] = {0};
 
-    printf("Geben sie die DNA-Sequenz des Gens ein: ");
-    int anzahlBasen = getDNASequence(suchGen);
-    // if (suchGen[0] == 'T' && suchGen[1] == 'T' && suchGen[2] == 'T')
-    // {
-    //     printf("-Gen gefunden!");
-    //     return 0;
-    // }
-    for (int i = 0, zeiger = 0; i < strlen(suchGen); i += 3, zeiger++)
-    {
-        char tmp[3] = {suchGen[i], suchGen[i + 1], suchGen[i + 2]};
-        genKodiert[zeiger] = encode(tmp);
-    }
+    char genom[MAX_GENOM]= {0};
+    char suchGen[MAX_UNKODIERT] = {0};
+    char genKodiert[MAX_KODIERT] = {0}; 
+    
+    // char* genom;
+    // char* suchGen;
+    // char* genKodiert;
+    // genom = malloc(3000*sizeof(unsigned char));
+    // suchGen = malloc(3000*sizeof(unsigned char));
+    // genKodiert = malloc(1000*sizeof(unsigned char));
 
     FILE *fp;
     fp = fopen("C:\\UNI\\Informatik_2\\Informatik_Praktikum\\BMC_C\\genom.txt", "rb");
-
-    fread(genom, sizeof(unsigned char), MAX_GENOM, fp);
+        
+    printf("Geben Sie die DNA-Sequenz des Gens ein: ");
     
-    if (strstr(genom, genKodiert))
+    getDNASequence(suchGen);
+    int anzahlBasen = strlen(suchGen);
+    int index_genKodiert = 0;
+    
+    for (int i = 0, index_genKodiert = 0; i < anzahlBasen; i += 3, index_genKodiert++)
+    {
+        char tmp[3] = {suchGen[i], suchGen[i + 1], suchGen[i + 2]};
+        genKodiert[index_genKodiert] = encode(tmp);
+    }
+    
+    
+    int lenGenKodiertInt = strlen(genKodiert);
+    
+    fread(genom, sizeof(int), MAX_GENOM, fp);
+    
+    int gefunden = 0;
+    // AGTCTA = 56 13 
+    for (int i = 0; i < MAX_GENOM && !gefunden; i++)
+    {
+        if (genom[i] == genKodiert[0])
+        {
+            for (int k = 0; k < lenGenKodiertInt; k++)
+            {
+                if (genom[i] != genKodiert[k])
+                {
+                    break;
+                }
+                else
+                {
+                    i++;
+                    if (k == lenGenKodiertInt-1)
+                    {
+                        // Wenn es das letzte kodierte Codon ist, das auch bereinstimmt,
+                        // dann ist das Gen gefunden
+                        gefunden = 1;
+                    }
+                }
+            }
+        }
+    }
+    
+    if (gefunden == 1)
     {
         printf("-Gen gefunden!");
     }

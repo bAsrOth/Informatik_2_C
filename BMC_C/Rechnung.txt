@@ -1,0 +1,5 @@
+3,2 * 10^9 = Anzahl der Basepaare
+3 200 000 000 = Byte wenn man als .txt abspeichert
+3200 MB = 3,2 GB
+
+.txt weil 1 Byte = 1 Buchstabe, unsigned chars werden ohne erweiterung abgespeichert und Anzahl chars = Anzahl Bytes der Datei
