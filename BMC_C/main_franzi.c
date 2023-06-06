@@ -30,7 +30,6 @@ char getDNABase(void){
         else {
             putchar (7); 
         }
-
     }
     return eingabe; 
 
