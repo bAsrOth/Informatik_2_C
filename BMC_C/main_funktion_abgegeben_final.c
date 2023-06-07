@@ -37,12 +37,6 @@ int main(void)
     if (gefunden == 0){
         for (int i = 0; i < MAX_GENOM && !gefunden; i++)
         {
-            // Verstehe leider nicht warum die String-Such-Funktion AGTCTA nicht findet, die eigene Suchfunktion aber schon. 
-            // In VS-Code passt eigentlich alles, ist schwer zu debuggen wenn man nicht weiá wie die genom.dat aussieht. 
-            // if (genKodiert[0] == 56 && genKodiert[1] == 13){
-            //     gefunden = 0;
-            //     break;
-            // }
             if (genom[i] == genKodiert[0])
             {
                 for (int k = 0; k < lenGenKodiertInt; k++)

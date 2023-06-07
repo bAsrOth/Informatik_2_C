@@ -9,8 +9,8 @@ char getDNABase(void){
         eingabe = getch(); 
 
         if (eingabe == 'A' || eingabe == 'a'){
-            putchar ('A');
             return 'A';
+            putchar ('A');
         }
         if (eingabe == 'C' || eingabe == 'c'){
             putchar ('C');
@@ -36,8 +36,7 @@ char getDNABase(void){
 }
 
 int main(void){
-    char c; 
-    c = getDNABase(); 
+
 
     getch(); 
     return 0; 
