@@ -149,7 +149,7 @@ unsigned char readCodon(FILE *fp)
 	return einlesen;
 }
 
-void arrayFuellen(int array[], int n)
+void arrayFuellen(char array[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -162,14 +162,23 @@ int main(void)
 	char genom[MAX_GENOM] = {0};
 	char suchGen[MAX_UNKODIERT] = {0};
 	char genKodiert[MAX_KODIERT] = {0};
+	arrayFuellen(genom, MAX_GENOM);
+	arrayFuellen(suchGen, MAX_UNKODIERT);
+	arrayFuellen(genKodiert, MAX_KODIERT);
+	// char* genom;
+    // char* suchGen;
+    // char* genKodiert;
+    // genom = malloc(3000*sizeof(unsigned char));
+    // suchGen = malloc(3000*sizeof(unsigned char));
+    // genKodiert = malloc(1000*sizeof(unsigned char));
 
 	FILE *fp;
 	fp = fopen("C:\\UNI\\Informatik_2\\Informatik_Praktikum\\BMC_C\\genom.txt", "rb");
 
 	printf("Geben Sie die DNA-Sequenz des Gens ein: ");
 
-	getDNASequence(suchGen);
-	int anzahlBasen = strlen(suchGen);
+	// getDNASequence(suchGen);
+	int anzahlBasen = /*strlen(suchGen)*/ getDNASequence(suchGen);
 	int index_genKodiert = 0;
 
 	for (int i = 0; i < anzahlBasen; i += 3, index_genKodiert++)
@@ -178,7 +187,7 @@ int main(void)
 		genKodiert[index_genKodiert] = encode(tmp);
 	}
 
-	int lenGenKodiertInt = strlen(genKodiert);
+	int lenGenKodiertInt = /*strlen(genKodiert);*/ index_genKodiert;
 
 	fread(genom, sizeof(int), MAX_GENOM, fp);
 
