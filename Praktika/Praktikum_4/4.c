@@ -12,7 +12,8 @@ int fakultaet(int a)
 
 int main(void)
 {
-    int zahl,summe = 0;
+    long int zahl;
+    long int summe = 0;
     printf("Bitte geben sie eine positive Zahl ein: ");
     scanf("%d",&zahl);
     if (zahl > 0)

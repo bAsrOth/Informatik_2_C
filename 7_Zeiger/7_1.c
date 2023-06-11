@@ -8,9 +8,12 @@ void swap(int *pa, int *pb)
     *pa = *pb;
     *pb = tmp;
 }
-void main()
+int main(void)
 {
-    int a = 2, b = 7;
-    swap(&a, &b);
-    getch();
+	int a = 2, b = 7;
+	printf("a = %d und b = %d\n\n",a,b);
+	swap(&a, &b);
+	printf("a = %d und b = %d",a,b);
+	getch();
+	return 0;
 }

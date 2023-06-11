@@ -6,13 +6,13 @@ char readChar(void)
     while (1)
     {
         char c = getch();
-        if (c >= 65 && c <= 90)
+        if (c >= 'A' && c <= 'Z')
         {
             putchar(c);
             return c;
             break;
         }
-        else if (c >= 97 && c <= 122)
+        else if (c >= 'a' && c <= 'z')
         {
             putchar(c);
             return c;
@@ -38,9 +38,18 @@ char readChar(void)
 }
 
 int readLine(char *text, int n){
+    char tmp;
     for (int i = 0; i < n; i++)
     {
-        text[i] = readChar();
+        tmp = readChar();
+        if (tmp == 13)
+        {
+            return 0;
+        }
+        else{
+            text[i] = tmp;
+        }
+        
     }
     return 0;
 }
@@ -52,7 +61,10 @@ int main(void)
     char text[100];
     printf("Bitte geben sie ein wieviele Zeichen sie eingeben wollen: ");
     scanf("%d",&anzahl);
+    printf("Geben sie jetzt ihren Satz ein (Enter beendet): ");
     readLine(text,anzahl);
+    putchar('\n');
+    puts(text);
     getch();
     return 0;
 }

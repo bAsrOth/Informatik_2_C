@@ -2,6 +2,7 @@
 // nach main() den Bruttopreis berechnet und dann ausgibt!
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 
 double brutto(double a);
 
@@ -12,6 +13,8 @@ int main(void)
     scanf("%lf", &a);
     double b = brutto(a);
     printf("Das ist der Brutto-Preis: %.3f",b);
+    putchar('\n');
+    system("pause");
     return 0;
 }
 

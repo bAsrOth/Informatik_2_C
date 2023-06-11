@@ -24,5 +24,6 @@ int main(void)
     putchar('\n');
     int det = matrix[0][0]*matrix[1][1]-matrix[0][1]*matrix[1][0];
     printf("Die Determinante ist det(a) = %i",det);
+    getch();
     return 0;
 }

@@ -13,9 +13,10 @@
 #include <conio.h>
 #include <stdio.h>
 
-char zeilenumbruch()
+char zeilenumbruch(void)
 {
     putchar('\n');
+    return 0;
 }
 
 char zeichenausgabe(int a, char b)
