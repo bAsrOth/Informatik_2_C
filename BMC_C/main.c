@@ -151,7 +151,7 @@ unsigned char encode(char seq[])
 /**
  * @brief Die Funktion liest ein Basentriplet ein und Åbergibt es.
  * 
- * @param fp 
+ * @param fp File-Pointer der auf die richtige Datei zeigt
  * @return unsigned char 
  */
 unsigned char readCodon(FILE *fp)
