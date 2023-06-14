@@ -1,11 +1,21 @@
+/**
+ * @file main.c
+ * @author Bastian Johannes Roth
+ * @brief Das Programm dient dazu um aus einer gegebenen Gensequenz eine spezielle Gensequenz herauszusuchen, welche vom Benutzer eingegeben wird.
+ * @version 1.0
+ * @date 2023-06-14
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_UNKODIERT 3000
-#define MAX_KODIERT 1000
-#define MAX_GENOM 1000
+#define MAX_UNKODIERT 3000 // maximale Anzahl von unkodierten Basen
+#define MAX_KODIERT 1000 // maximale Anzahl von kodierten Basen
+#define MAX_GENOM 1000 // maximale Anzahl von kodierten Basen, welche aus einer Datei eingelesen werden kînnen
 
 enum DNABase
 {
@@ -138,17 +148,24 @@ unsigned char encode(char seq[])
 
 	return ausgabe;
 }
-
+/**
+ * @brief Die Funktion liest ein Basentriplet ein und Åbergibt es.
+ * 
+ * @param fp 
+ * @return unsigned char 
+ */
 unsigned char readCodon(FILE *fp)
 {
 	char einlesen;
-	for (int i = 0; i < 3; i++)
-	{
-		fscanf(fp, "%s", &einlesen);
-	}
+	fscanf(fp, "%s", &einlesen);
 	return einlesen;
 }
-
+/**
+ * @brief Funktion dient dazu ein Array mit einer beliebigen Zahl zu fÅllen
+ *
+ * @param array Array welches Åbergeben wird
+ * @param n Anzahl der Elemente im Array
+ */
 void arrayFuellen(char array[], int n)
 {
 	for (int i = 0; i < n; i++)
@@ -156,7 +173,11 @@ void arrayFuellen(char array[], int n)
 		array[i] = 64;
 	}
 }
-
+/**
+ * @brief Die Funktion durchsucht eine Datei, in der kodierte Gene abgespeichert sind, nach einer eingegeben Gen-Sequenz, welche auch kodiert wird.
+ *
+ * @return int
+ */
 int main(void)
 {
 	char genom[MAX_GENOM] = {0};
@@ -166,11 +187,11 @@ int main(void)
 	arrayFuellen(suchGen, MAX_UNKODIERT);
 	arrayFuellen(genKodiert, MAX_KODIERT);
 	// char* genom;
-    // char* suchGen;
-    // char* genKodiert;
-    // genom = malloc(3000*sizeof(unsigned char));
-    // suchGen = malloc(3000*sizeof(unsigned char));
-    // genKodiert = malloc(1000*sizeof(unsigned char));
+	// char* suchGen;
+	// char* genKodiert;
+	// genom = malloc(3000*sizeof(unsigned char));
+	// suchGen = malloc(3000*sizeof(unsigned char));
+	// genKodiert = malloc(1000*sizeof(unsigned char));
 
 	FILE *fp;
 	fp = fopen("C:\\UNI\\Informatik_2\\Informatik_Praktikum\\BMC_C\\genom.txt", "rb");
